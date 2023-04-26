@@ -76,7 +76,8 @@ public class RelativeMovement : MonoBehaviour {
 		// could _charController.isGrounded instead, but then cannot workaround dropoff edge
 		if (hitGround) {
 			if (Input.GetButtonDown("Jump")) {
-				vertSpeed = jumpSpeed;
+				if(Managers.Inventory.equippedItem == "ore") vertSpeed = 2*jumpSpeed;
+				else vertSpeed = jumpSpeed;
 			} else {
 				vertSpeed = minFall;
 				animator.SetBool("Jumping", false);

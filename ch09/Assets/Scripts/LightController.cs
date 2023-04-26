@@ -7,7 +7,6 @@ public class LightController : MonoBehaviour
 {
     [SerializeField] Light lightSrc;
 
-    public bool lightOn = false;
     private CharacterController charController;
 
     // Start is called before the first frame update
@@ -19,8 +18,7 @@ public class LightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)) lightOn = !lightOn;
-        if (lightOn == true) lightSrc.intensity = 2;
+        if(Managers.Inventory.equippedItem == "energy") lightSrc.intensity = 2;
         else lightSrc.intensity = 0;
     }
 }
