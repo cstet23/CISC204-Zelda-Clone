@@ -39,7 +39,7 @@ public class RelativeMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 
-		if (Input.GetKeyDown(KeyCode.LeftShift)) running = !running;
+		if (Input.GetKeyDown(KeyCode.LeftShift) && Managers.Inventory.equippedItem == "sprint") running = !running;
 		// start with zero and add movement components progressively
 		Vector3 movement = Vector3.zero;
 
@@ -76,7 +76,7 @@ public class RelativeMovement : MonoBehaviour {
 		// could _charController.isGrounded instead, but then cannot workaround dropoff edge
 		if (hitGround) {
 			if (Input.GetButtonDown("Jump")) {
-				if(Managers.Inventory.equippedItem == "ore") vertSpeed = 2*jumpSpeed;
+				if(Managers.Inventory.equippedItem == "jump") vertSpeed = 2*jumpSpeed;
 				else vertSpeed = jumpSpeed;
 			} else {
 				vertSpeed = minFall;

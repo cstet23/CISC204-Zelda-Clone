@@ -18,7 +18,7 @@ public class LightController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Managers.Inventory.equippedItem == "energy") lightSrc.intensity = 2;
+        if(Managers.Inventory.equippedItem == "torch") lightSrc.intensity = 2;
         else lightSrc.intensity = 0;
     }
 }

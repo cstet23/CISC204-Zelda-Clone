@@ -335,6 +335,7 @@
 "Assets/Scripts/Devices/ColorChangeDevice.cs"
 "Assets/Scripts/Devices/DeviceOperator.cs"
 "Assets/Scripts/Devices/DeviceTrigger.cs"
+"Assets/Scripts/Devices/DeviceTrigger2.cs"
 "Assets/Scripts/Devices/DoorOpenDevice.cs"
 "Assets/Scripts/LightController.cs"
 "Assets/Scripts/Managers/IGameManager.cs"
