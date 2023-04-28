@@ -14,7 +14,7 @@ public class RelativeMovement : MonoBehaviour {
 	[SerializeField] Transform target;
 	
 	public float moveSpeed = 6.0f;
-	public float rotSpeed = 15.0f;
+	public float rotSpeed = 6.0f;
 	public float jumpSpeed = 15.0f;
 	public float gravity = -9.8f;
 	public float terminalVelocity = -20.0f;
@@ -40,6 +40,7 @@ public class RelativeMovement : MonoBehaviour {
 	void Update() {
 
 		if (Input.GetKeyDown(KeyCode.LeftShift) && Managers.Inventory.equippedItem == "sprint") running = !running;
+		else if(Managers.Inventory.equippedItem != "sprint") running = false;
 		// start with zero and add movement components progressively
 		Vector3 movement = Vector3.zero;
 
@@ -76,7 +77,7 @@ public class RelativeMovement : MonoBehaviour {
 		// could _charController.isGrounded instead, but then cannot workaround dropoff edge
 		if (hitGround) {
 			if (Input.GetButtonDown("Jump")) {
-				if(Managers.Inventory.equippedItem == "jump") vertSpeed = 2*jumpSpeed;
+				if(Managers.Inventory.equippedItem == "jump") vertSpeed = 1.5f*jumpSpeed;
 				else vertSpeed = jumpSpeed;
 			} else {
 				vertSpeed = minFall;
